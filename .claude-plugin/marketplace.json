@@ -1,0 +1,12 @@
+{
+  "name": "claude-skills-godot",
+  "owner": { "name": "JuanS1mon" },
+  "metadata": { "description": "Skills de Claude para hacer juegos en Godot 4." },
+  "plugins": [
+    {
+      "name": "godot-skills",
+      "source": "./",
+      "description": "Skills para hacer juegos en Godot 4: 2.5D y 2D móvil en GDScript."
+    }
+  ]
+}

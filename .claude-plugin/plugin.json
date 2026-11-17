@@ -1,0 +1,9 @@
+{
+  "name": "godot-skills",
+  "version": "1.0.0",
+  "description": "Skills para hacer juegos en Godot 4: 2.5D (2D dentro de un mundo 3D) y 2D móvil en GDScript.",
+  "author": { "name": "JuanS1mon" },
+  "homepage": "https://github.com/JuanS1mon/claude-skills-godot",
+  "repository": "https://github.com/JuanS1mon/claude-skills-godot",
+  "keywords": ["godot", "gdscript", "gamedev", "2.5d", "mobile"]
+}
