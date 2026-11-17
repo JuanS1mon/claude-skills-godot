@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dekqdflbrd204"]
+
+[ext_resource type="Script" uid="uid://dgpa6kvdbfbdk" path="res://scripts/inventario_ui.gd" id="1_q8iqg"]
+[ext_resource type="PackedScene" uid="uid://dyl3mesh3132" path="res://scenes/slot.tscn" id="2_l8kn4"]
+[ext_resource type="Theme" path="res://themes/zarita.tres" id="3_tema"]
+[ext_resource type="Script" path="res://scripts/scroll_deslizable.gd" id="4_scroll"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_resplandor"]
+draw_center = false
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 0.89, 0.45, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(1, 0.85, 0.35, 0.6)
+shadow_size = 20
+anti_aliasing_size = 1.0
+
+[node name="InventarioUI" type="PanelContainer" unique_id=1596415792]
+custom_minimum_size = Vector2(0, 200)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -400.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_tema")
+script = ExtResource("1_q8iqg")
+escena_slot = ExtResource("2_l8kn4")
+
+[node name="Scroll" type="ScrollContainer" parent="." unique_id=1367967564]
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("4_scroll")
+horizontal = true
+
+[node name="Lista" type="HBoxContainer" parent="Scroll" unique_id=1510997382]
+layout_mode = 2
+
+[node name="Resplandor" type="Panel" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_resplandor")

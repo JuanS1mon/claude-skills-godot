@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dam738minpe88"]
+
+[ext_resource type="Script" uid="uid://d2yrymusuet5x" path="res://scripts/luz_natural.gd" id="1_luz"]
+
+[sub_resource type="Gradient" id="Gradient_rayo"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rayo"]
+gradient = SubResource("Gradient_rayo")
+width = 256
+height = 256
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_izq"]
+polygon = PackedVector2Array(-3000, 205, 14, 205, 14, 1400, -3000, 1400)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_der"]
+polygon = PackedVector2Array(706, 205, 3000, 205, 3000, 1400, 706, 1400)
+
+[node name="LuzNatural" type="Node2D" unique_id=691499038]
+script = ExtResource("1_luz")
+fuerza_sol = 0.4
+fuerza_luna = 0.45
+tinte_sol = Color(1, 0.84, 0.7, 1)
+huecos_prueba = PackedFloat32Array(110, 360, 610)
+
+[node name="Rayo" type="PointLight2D" parent="." unique_id=542322679]
+visible = false
+position = Vector2(360, -400)
+color = Color(0.78, 0.86, 1, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.5
+texture = SubResource("GradientTexture2D_rayo")
+texture_scale = 35.0
+
+[node name="Pared" type="Node2D" parent="." unique_id=488861776]
+
+[node name="Laterales" type="Node2D" parent="Pared" unique_id=1085898455]
+
+[node name="Izquierda" type="LightOccluder2D" parent="Pared/Laterales" unique_id=1718453327]
+occluder = SubResource("OccluderPolygon2D_izq")
+
+[node name="Derecha" type="LightOccluder2D" parent="Pared/Laterales" unique_id=1496199979]
+occluder = SubResource("OccluderPolygon2D_der")

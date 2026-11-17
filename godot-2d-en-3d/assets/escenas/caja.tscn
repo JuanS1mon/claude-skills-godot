@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/caja.gd" id="1_caja"]
+[ext_resource type="Material" path="res://shaders/mat_caja.tres" id="2_toon"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c"]
+friction = 0.8
+bounce = 0.15
+
+[node name="Caja" type="RigidBody3D"]
+collision_layer = 16
+collision_mask = 23
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_c")
+script = ExtResource("1_caja")
+
+[node name="Malla" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_c")
+surface_material_override/0 = ExtResource("2_toon")
+
+[node name="Forma" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_c")

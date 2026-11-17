@@ -1,0 +1,57 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/zona_venta.gd" id="1_script"]
+[ext_resource type="Theme" path="res://themes/zarita.tres" id="2_tema"]
+[ext_resource type="Texture2D" path="res://assets/ui/iconos/moneda.png" id="3_moneda"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_resplandor"]
+draw_center = false
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 0.89, 0.45, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(1, 0.85, 0.35, 0.6)
+shadow_size = 20
+anti_aliasing_size = 1.0
+
+[node name="ZonaVenta" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = 120.0
+offset_right = -24.0
+offset_bottom = 216.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("2_tema")
+script = ExtResource("1_script")
+
+[node name="Fila" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Icono" type="TextureRect" parent="Fila"]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_moneda")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texto" type="Label" parent="Fila"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Suelta aquí para vender"
+
+[node name="Resplandor" type="Panel" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_resplandor")

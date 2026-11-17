@@ -1,0 +1,38 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/item_tienda.gd" id="1_script"]
+[ext_resource type="Theme" path="res://themes/zarita.tres" id="2_tema"]
+
+[node name="ItemTienda" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+mouse_filter = 2
+theme = ExtResource("2_tema")
+script = ExtResource("1_script")
+
+[node name="Imagen" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Muestra" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Nombre" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+vertical_alignment = 1
+
+[node name="Precio" type="Label" parent="."]
+layout_mode = 2
+mouse_filter = 2
+vertical_alignment = 1
+
+[node name="BotonComprar" type="Button" parent="."]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+text = "Comprar"

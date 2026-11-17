@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/quieto_0.png" id="q0"]
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/quieto_1.png" id="q1"]
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/quieto_2.png" id="q2"]
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/quieto_3.png" id="q3"]
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/quieto_4.png" id="q4"]
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/quieto_5.png" id="q5"]
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/golpe_0.png" id="g0"]
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/golpe_1.png" id="g1"]
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/golpe_2.png" id="g2"]
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/ko_0.png" id="k0"]
+[ext_resource type="Texture2D" path="res://arte/sprites/dummy/ko_1.png" id="k1"]
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("q0")}, {"duration": 1.0, "texture": ExtResource("q1")}, {"duration": 1.0, "texture": ExtResource("q2")}, {"duration": 1.0, "texture": ExtResource("q3")}, {"duration": 1.0, "texture": ExtResource("q4")}, {"duration": 1.0, "texture": ExtResource("q5")}],
+"loop": true,
+"name": &"quieto",
+"speed": 6.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("g0")}, {"duration": 1.0, "texture": ExtResource("g1")}, {"duration": 1.0, "texture": ExtResource("g2")}],
+"loop": false,
+"name": &"golpe",
+"speed": 14.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("k0")}, {"duration": 1.0, "texture": ExtResource("k1")}],
+"loop": true,
+"name": &"ko",
+"speed": 4.0
+}]

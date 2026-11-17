@@ -1,0 +1,46 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/npc_amigo.tscn" id="1_base"]
+[ext_resource type="Texture2D" path="res://assets/personajes/homero.png" id="2_imagen"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vista"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_imagen")
+}],
+"loop": true,
+"name": &"reposo",
+"speed": 5.0
+}]
+
+[node name="Homero" instance=ExtResource("1_base")]
+id_personaje = "homero"
+nombre = "Homero"
+color = Color(0.72, 0.45, 0.25, 1)
+escala = 0.2
+imagen = ExtResource("2_imagen")
+ojos = PackedVector2Array(184, 134)
+ojo_tamano = Vector2(22, 17)
+color_parpado = Color(0.8, 0.52, 0.3, 1)
+cola_zona = Vector4(0, 0.7, 0.34, 0.92)
+cola_punta_izquierda = true
+cola_eje = Vector2(1, 0)
+cola_amplitud = 0.03
+
+[node name="Cuerpo" parent="." index="0"]
+visible = false
+
+[node name="Ojos" parent="." index="1"]
+visible = false
+
+[node name="Ojo2" parent="." index="2"]
+visible = false
+
+[node name="Sprite" parent="." index="3"]
+visible = true
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_vista")
+animation = &"reposo"
+centered = false
+offset = Vector2(-208.0, -594)

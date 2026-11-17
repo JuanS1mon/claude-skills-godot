@@ -1,0 +1,55 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://arte/sprites/jefe/caminar_0.png" id="c0"]
+[ext_resource type="Texture2D" path="res://arte/sprites/jefe/caminar_1.png" id="c1"]
+[ext_resource type="Texture2D" path="res://arte/sprites/jefe/caminar_2.png" id="c2"]
+[ext_resource type="Texture2D" path="res://arte/sprites/jefe/caminar_3.png" id="c3"]
+[ext_resource type="Texture2D" path="res://arte/sprites/jefe/aviso.png" id="av"]
+[ext_resource type="Texture2D" path="res://arte/sprites/jefe/embestida.png" id="em"]
+[ext_resource type="Texture2D" path="res://arte/sprites/jefe/aturdido.png" id="at"]
+[ext_resource type="Texture2D" path="res://arte/sprites/jefe/agachado.png" id="ag"]
+[ext_resource type="Texture2D" path="res://arte/sprites/jefe/saltando.png" id="sa"]
+[ext_resource type="Texture2D" path="res://arte/sprites/jefe/caida.png" id="ca"]
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("c0")}, {"duration": 1.0, "texture": ExtResource("c1")}, {"duration": 1.0, "texture": ExtResource("c2")}, {"duration": 1.0, "texture": ExtResource("c3")}],
+"loop": true,
+"name": &"caminar",
+"speed": 7.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("av")}],
+"loop": false,
+"name": &"aviso",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("em")}, {"duration": 1.0, "texture": ExtResource("c2")}],
+"loop": true,
+"name": &"embestida",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("at")}],
+"loop": false,
+"name": &"aturdido",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("ag")}],
+"loop": false,
+"name": &"agachado",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("sa")}],
+"loop": false,
+"name": &"saltando",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("sa")}],
+"loop": false,
+"name": &"cayendo",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("ca")}],
+"loop": false,
+"name": &"caida",
+"speed": 5.0
+}]

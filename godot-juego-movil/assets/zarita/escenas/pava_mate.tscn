@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/mueble.tscn" id="1_mueble"]
+[ext_resource type="Script" path="res://scripts/pava_mate.gd" id="2_pava"]
+
+[node name="PavaMate" instance=ExtResource("1_mueble")]
+script = ExtResource("2_pava")
+textura = null
+color = Color(1, 1, 1, 1)
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -24)

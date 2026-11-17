@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PrendaData" format=3]
+
+[ext_resource type="Script" path="res://scripts/prenda_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+nombre = "Bufanda tejida"
+forma = 0
+color = Color(0.86, 0.36, 0.42, 1)
+color_borde = Color(0.99, 0.93, 0.8, 1)
+precio = 80

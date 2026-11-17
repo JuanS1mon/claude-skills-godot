@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cxaflxwgj1jkq"]
+
+[ext_resource type="Script" uid="uid://baxlo8lct5th8" path="res://scripts/casa.gd" id="1_6lyl3"]
+[ext_resource type="PackedScene" uid="uid://3w7addy65e4b" path="res://scenes/zarita.tscn" id="1_16s4k"]
+[ext_resource type="Texture2D" uid="uid://dphfg723pt1ry" path="res://assets/fondos/casa_fondo_horizontal.png" id="2_6lyl3"]
+[ext_resource type="PackedScene" uid="uid://dekqdflbrd204" path="res://scenes/inventario_ui.tscn" id="3_ias33"]
+[ext_resource type="PackedScene" uid="uid://cpwagm7vyncmi" path="res://scenes/hud.tscn" id="4_d31c8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(720, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(720, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(24, 1280)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
+size = Vector2(22, 1280)
+
+[node name="Casa" type="Node2D" unique_id=2103754910]
+script = ExtResource("1_6lyl3")
+
+[node name="Suelo" type="TextureRect" parent="." unique_id=1916457923]
+offset_right = 720.0
+offset_bottom = 1280.0
+mouse_filter = 2
+texture = ExtResource("2_6lyl3")
+expand_mode = 1
+
+[node name="Zarita" parent="." unique_id=1941408745 instance=ExtResource("1_16s4k")]
+position = Vector2(360, 640)
+velocidad = 250.0
+
+[node name="Paredes" type="StaticBody2D" parent="." unique_id=845212365]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes" unique_id=70726905]
+position = Vector2(360, 156)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes" unique_id=1235640210]
+position = Vector2(358.5, 1256.5)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes" unique_id=1302732687]
+position = Vector2(12, 640)
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes" unique_id=1153624022]
+position = Vector2(709, 640)
+shape = SubResource("RectangleShape2D_3gngh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1714230711]
+
+[node name="InventarioUI" parent="CanvasLayer" unique_id=1596415792 instance=ExtResource("3_ias33")]
+
+[node name="Hud" parent="CanvasLayer" unique_id=841317369 instance=ExtResource("4_d31c8")]

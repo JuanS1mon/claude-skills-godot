@@ -1,0 +1,30 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://themes/zarita.tres" id="1_tema"]
+[ext_resource type="Texture2D" path="res://assets/ui/iconos/casa.png" id="2_icono"]
+
+[node name="BotonMapa" type="Button"]
+custom_minimum_size = Vector2(120, 120)
+offset_left = 24.0
+offset_top = 112.0
+offset_right = 144.0
+offset_bottom = 232.0
+focus_mode = 0
+theme = ExtResource("1_tema")
+theme_type_variation = &"BotonIcono"
+
+[node name="Icono" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_icono")
+expand_mode = 1
+stretch_mode = 5

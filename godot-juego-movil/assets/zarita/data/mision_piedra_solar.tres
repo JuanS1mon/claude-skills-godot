@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MisionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/mision_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://data/personajes/teo.tres" id="2_teo"]
+
+[resource]
+script = ExtResource("1_data")
+titulo = "La piedra solar de Teo"
+texto = "Zarita, ayudame a buscar mi piedra solar favorita: creo que la dejé en tu cocina. Y te cambio un tesoro."
+personaje = ExtResource("2_teo")
+tipo = 2
+cantidad = 1
+habitacion_destino = "cocina"
+recompensa_destellos = 50
+recompensa_gemas = 1

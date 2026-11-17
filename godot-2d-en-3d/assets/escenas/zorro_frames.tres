@@ -1,0 +1,162 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/quieto_0.png" id="quieto_0"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/quieto_1.png" id="quieto_1"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/quieto_2.png" id="quieto_2"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/quieto_3.png" id="quieto_3"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/corriendo_0.png" id="corriendo_0"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/corriendo_1.png" id="corriendo_1"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/corriendo_2.png" id="corriendo_2"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/corriendo_3.png" id="corriendo_3"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/corriendo_4.png" id="corriendo_4"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/corriendo_5.png" id="corriendo_5"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/saltando.png" id="saltando"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/cumbre.png" id="cumbre"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/cayendo.png" id="cayendo"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/agacharse.png" id="agacharse"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/disparando.png" id="disparando"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/levantar.png" id="levantar"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/cargando.png" id="cargando"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/arrojar.png" id="arrojar"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/cargando_corriendo_0.png" id="cc0"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/cargando_corriendo_1.png" id="cc1"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/cargando_corriendo_2.png" id="cc2"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/cargando_corriendo_3.png" id="cc3"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/cargando_corriendo_4.png" id="cc4"]
+[ext_resource type="Texture2D" path="res://arte/sprites/zorro/cargando_corriendo_5.png" id="cc5"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("quieto_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("quieto_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("quieto_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("quieto_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("quieto_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("quieto_1")
+}],
+"loop": true,
+"name": &"quieto",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("corriendo_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("corriendo_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("corriendo_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("corriendo_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("corriendo_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("corriendo_5")
+}],
+"loop": true,
+"name": &"corriendo",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("saltando")
+}],
+"loop": false,
+"name": &"saltando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("cumbre")
+}],
+"loop": false,
+"name": &"cumbre",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("cayendo")
+}],
+"loop": false,
+"name": &"cayendo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("agacharse")
+}],
+"loop": false,
+"name": &"aterrizar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("disparando")
+}],
+"loop": false,
+"name": &"disparando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("levantar")
+}],
+"loop": false,
+"name": &"levantar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("cargando")
+}],
+"loop": false,
+"name": &"cargando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("arrojar")
+}],
+"loop": false,
+"name": &"arrojar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("cc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("cc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("cc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("cc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("cc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("cc5")
+}],
+"loop": true,
+"name": &"cargando_corriendo",
+"speed": 12.0
+}]

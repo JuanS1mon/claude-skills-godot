@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/jefe.gd" id="1_j"]
+[ext_resource type="SpriteFrames" path="res://datos/jefe_frames.tres" id="2_frames"]
+[ext_resource type="PackedScene" path="res://escenas/bellota.tscn" id="3_bellota"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j"]
+size = Vector3(3.1, 2.1, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_contacto"]
+size = Vector3(3.2, 2.0, 1.6)
+
+[node name="Jefe" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 1
+axis_lock_linear_z = true
+script = ExtResource("1_j")
+escena_proyectil = ExtResource("3_bellota")
+
+[node name="Forma" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("BoxShape3D_j")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36, 0)
+pixel_size = 0.0112
+shaded = true
+alpha_cut = 2
+sprite_frames = ExtResource("2_frames")
+animation = &"caminar"
+autoplay = "caminar"
+
+[node name="Contacto" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="Forma" type="CollisionShape3D" parent="Contacto"]
+shape = SubResource("BoxShape3D_contacto")
+
+[node name="Vida" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, 0)
+billboard = 1
+no_depth_test = true
+text = ""
+font_size = 40
+outline_size = 10

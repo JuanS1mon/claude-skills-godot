@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="HabitacionData" format=3]
+
+[ext_resource type="Script" path="res://scripts/habitacion_data.gd" id="1_data"]
+[ext_resource type="Texture2D" path="res://assets/fondos/casa_fondo_horizontal.png" id="2_suelo"]
+
+[resource]
+script = ExtResource("1_data")
+nombre = "Cocina"
+suelo = ExtResource("2_suelo")
+tinte_suelo = Color(0.9, 1, 0.92, 1)
+color_mapa = Color(0.76, 0.90, 0.72, 1)
+orden = 2
+precio_gemas = 9
+inicio_zarita = Vector2(360, 640)

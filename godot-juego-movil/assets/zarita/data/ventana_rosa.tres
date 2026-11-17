@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MuebleData" format=3]
+
+[ext_resource type="Script" path="res://scripts/mueble_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/ventana.tscn" id="2_escena"]
+[ext_resource type="Texture2D" path="res://assets/ventanas/ventana_rosa_marco.png" id="3_icono"]
+
+[resource]
+script = ExtResource("1_data")
+nombre = "Ventana con cortinas rosas"
+escena = ExtResource("2_escena")
+icono = ExtResource("3_icono")
+color = Color(1, 1, 1, 1)
+tamano = Vector2(197, 150)
+bloquea = false
+solo_en_pared = true
+variante = 0
+precio = 150
+moneda = 0
+categoria = 2

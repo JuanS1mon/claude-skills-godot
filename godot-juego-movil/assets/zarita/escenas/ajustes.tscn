@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://b4s4b60hwyj1v"]
+
+[ext_resource type="Script" uid="uid://cw0ykloerkii6" path="res://scripts/ajustes.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://dnqdesgx4hhx7" path="res://themes/zarita.tres" id="2_tema"]
+[ext_resource type="Texture2D" uid="uid://iubj2a82bbaf" path="res://assets/ui/iconos/ajustes.png" id="3_tuerca"]
+
+[node name="Ajustes" type="Control" unique_id=1996561794]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_tema")
+script = ExtResource("1_script")
+
+[node name="BotonAjustes" type="Button" parent="." unique_id=1176613336]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 92.0
+grow_horizontal = 0
+focus_mode = 0
+theme_type_variation = &"BotonIconoToggle"
+toggle_mode = true
+
+[node name="Icono" type="TextureRect" parent="BotonAjustes" unique_id=1713922401]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_tuerca")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=806033925]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -300.0
+offset_right = 290.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Caja" type="VBoxContainer" parent="Panel" unique_id=738318836]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Titulo" type="Label" parent="Panel/Caja" unique_id=2108864503]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Ajustes"
+horizontal_alignment = 1
+
+[node name="Sonido" type="Label" parent="Panel/Caja" unique_id=2146264217]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Sonido"
+
+[node name="BotonSonido" type="Button" parent="Panel/Caja" unique_id=334182995]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "Activado"
+
+[node name="Volumen" type="HSlider" parent="Panel/Caja" unique_id=1786743275]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.8
+
+[node name="Joystick" type="Label" parent="Panel/Caja" unique_id=564697807]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Joystick"
+
+[node name="LadoJoystick" type="HBoxContainer" parent="Panel/Caja" unique_id=941308664]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BotonIzquierda" type="Button" parent="Panel/Caja/LadoJoystick" unique_id=1271696587]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "A la izquierda"
+
+[node name="BotonDerecha" type="Button" parent="Panel/Caja/LadoJoystick" unique_id=1458502016]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "A la derecha"
+
+[node name="Relleno" type="Control" parent="Panel/Caja" unique_id=88745076]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BotonCerrar" type="Button" parent="Panel/Caja" unique_id=1030817868]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "Cerrar"

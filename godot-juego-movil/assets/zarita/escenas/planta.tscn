@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://da8o5imtqqljo"]
+
+[ext_resource type="PackedScene" uid="uid://yqujlkvxdrec" path="res://scenes/mueble.tscn" id="1_6mien"]
+
+[sub_resource type="Gradient" id="Gradient_blanco"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_planta"]
+gradient = SubResource("Gradient_blanco")
+width = 40
+height = 40
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgb6y"]
+size = Vector2(40, 40)
+
+[node name="planta" unique_id=1247014787 instance=ExtResource("1_6mien")]
+textura = SubResource("GradientTexture2D_planta")
+tamano = Vector2(40, 40)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=312698560]
+shape = SubResource("RectangleShape2D_jgb6y")

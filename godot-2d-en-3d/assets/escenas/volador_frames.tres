@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://arte/sprites/volador/volar_0.png" id="volar_0"]
+[ext_resource type="Texture2D" path="res://arte/sprites/volador/volar_1.png" id="volar_1"]
+[ext_resource type="Texture2D" path="res://arte/sprites/volador/volar_2.png" id="volar_2"]
+[ext_resource type="Texture2D" path="res://arte/sprites/volador/picada.png" id="picada"]
+[ext_resource type="Texture2D" path="res://arte/sprites/volador/golpe.png" id="golpe"]
+[ext_resource type="Texture2D" path="res://arte/sprites/volador/derrotado.png" id="derrotado"]
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("volar_0")}, {"duration": 1.0, "texture": ExtResource("volar_1")}, {"duration": 1.0, "texture": ExtResource("volar_2")}, {"duration": 1.0, "texture": ExtResource("volar_1")}],
+"loop": true,
+"name": &"volar",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("picada")}],
+"loop": false,
+"name": &"picada",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("golpe")}],
+"loop": false,
+"name": &"golpe",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("derrotado")}],
+"loop": false,
+"name": &"derrotado",
+"speed": 5.0
+}]

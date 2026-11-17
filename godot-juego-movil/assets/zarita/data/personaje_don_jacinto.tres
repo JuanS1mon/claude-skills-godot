@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PersonajeData" format=3]
+
+[ext_resource type="Script" path="res://scripts/personaje_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+nombre = "Don Jacinto"
+especie = "Hornero"
+rol = "Vecino sabio y arquitecto. Enseña construcción y mejoras de la casa; vende o regala yuyos serranos para el mate."
+personalidad = "Sabio, un poco cascarrabias pero de buen corazón. Su casa de barro está en la rama de arriba del árbol de Zarita."
+vive_en = "exterior"

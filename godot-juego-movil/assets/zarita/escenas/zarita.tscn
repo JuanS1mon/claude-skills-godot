@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://3w7addy65e4b"]
+
+[ext_resource type="Script" uid="uid://bd8nsildgti5m" path="res://scripts/zarita.gd" id="1_vpejn"]
+[ext_resource type="Texture2D" uid="uid://dlogyvypgt832" path="res://assets/zarita/caminata/abajo/zarita_abajo_1.png" id="2_yu5yc"]
+[ext_resource type="Texture2D" uid="uid://c4olusmvc8leb" path="res://assets/zarita/caminata/abajo/zarita_abajo_2.png" id="3_yy2a4"]
+[ext_resource type="Texture2D" uid="uid://58pr80bgpr6q" path="res://assets/zarita/caminata/abajo/zarita_abajo_3.png" id="4_gw2if"]
+[ext_resource type="Texture2D" uid="uid://chr6ws84liovv" path="res://assets/zarita/caminata/abajo/zarita_abajo_4.png" id="5_cen2f"]
+[ext_resource type="Texture2D" uid="uid://cb1h35ao1gyks" path="res://assets/zarita/caminata/arriba/zarita_arriba_1.png" id="6_8grc2"]
+[ext_resource type="Texture2D" uid="uid://dasl68dbdketb" path="res://assets/zarita/caminata/arriba/zarita_arriba_2.png" id="7_o5vjn"]
+[ext_resource type="Texture2D" uid="uid://dkodna8g3ewgw" path="res://assets/zarita/caminata/arriba/zarita_arriba_3.png" id="8_6jpce"]
+[ext_resource type="Texture2D" uid="uid://cn5w5bnmqxol5" path="res://assets/zarita/caminata/arriba/zarita_arriba_4.png" id="9_pkv3c"]
+[ext_resource type="Texture2D" uid="uid://dvkgdsiqiuptg" path="res://assets/zarita/caminata/derecha/zarita_derecha_1.png" id="10_lkvit"]
+[ext_resource type="Texture2D" uid="uid://dcf8tucc8d2m" path="res://assets/zarita/caminata/derecha/zarita_derecha_2.png" id="11_bn6qb"]
+[ext_resource type="Texture2D" uid="uid://b405a7qrtge3h" path="res://assets/zarita/caminata/derecha/zarita_derecha_3.png" id="12_l8fne"]
+[ext_resource type="Texture2D" uid="uid://nngkvlijdfgg" path="res://assets/zarita/caminata/derecha/zarita_derecha_4.png" id="13_i1w5v"]
+[ext_resource type="Texture2D" uid="uid://81gn5xmd7oj3" path="res://assets/zarita/caminata/izquierda/zarita_izquierda_1.png" id="14_8grc2"]
+[ext_resource type="Texture2D" uid="uid://blr43imo4m0dv" path="res://assets/zarita/caminata/izquierda/zarita_izquierda_2.png" id="15_o5vjn"]
+[ext_resource type="Texture2D" uid="uid://dwftekm5k4cg2" path="res://assets/zarita/caminata/izquierda/zarita_izquierda_3.png" id="16_6jpce"]
+[ext_resource type="Texture2D" uid="uid://b8w0cueqttmtp" path="res://assets/zarita/caminata/izquierda/zarita_izquierda_4.png" id="17_pkv3c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yu5yc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yy2a4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gw2if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cen2f")
+}],
+"loop": 1,
+"name": &"caminar_abajo",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8grc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o5vjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6jpce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pkv3c")
+}],
+"loop": 1,
+"name": &"caminar_arriba",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_lkvit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bn6qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l8fne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i1w5v")
+}],
+"loop": 1,
+"name": &"caminar_derecha",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_8grc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_o5vjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6jpce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pkv3c")
+}],
+"loop": 1,
+"name": &"caminar_izquierda",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(44, 22)
+
+[node name="Zarita" type="CharacterBody2D" unique_id=1941408745]
+script = ExtResource("1_vpejn")
+velocidad = 170.0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=699873778]
+position = Vector2(0, -53)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"caminar_izquierda"
+frame_progress = 0.52817553
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=551694508]
+visible = false
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+mouse_filter = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=807219814]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_yf5fn")

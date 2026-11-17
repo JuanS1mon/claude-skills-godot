@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MuebleData" format=3]
+
+[ext_resource type="Script" path="res://scripts/mueble_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/reproductor_musica.tscn" id="2_escena"]
+[ext_resource type="Texture2D" path="res://assets/muebles/decoracion/radio_menta.png" id="3_textura"]
+
+[resource]
+script = ExtResource("1_data")
+nombre = "Radio retro menta"
+escena = ExtResource("2_escena")
+textura = ExtResource("3_textura")
+color = Color(1, 1, 1, 1)
+tamano = Vector2(99, 92)
+huella = Vector2(80, 28)
+precio = 200
+moneda = 0
+categoria = 2
+apoyable = true

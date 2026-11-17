@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/bellota.gd" id="1_b"]
+[ext_resource type="Texture2D" path="res://arte/sprites/escarabajo/proyectil.png" id="2_tex"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b"]
+radius = 0.22
+
+[node name="Bellota" type="Area3D"]
+collision_layer = 0
+collision_mask = 3
+monitorable = false
+script = ExtResource("1_b")
+
+[node name="Forma" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_b")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+cast_shadow = 0
+modulate = Color(1, 0.6, 0.25, 1)
+pixel_size = 0.0035
+texture = ExtResource("2_tex")
+
+[node name="Luz" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.55, 0.2, 1)
+light_energy = 1.2
+omni_range = 1.8

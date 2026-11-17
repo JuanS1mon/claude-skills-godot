@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BichitoData" format=3]
+
+[ext_resource type="Script" path="res://scripts/bichito_data.gd" id="1_data"]
+[ext_resource type="Resource" path="res://data/blends/peperina.tres" id="2_ing"]
+[resource]
+script = ExtResource("1_data")
+nombre = "Bichito azulado"
+color = Color(0.55, 0.8, 1, 1)
+destellos = 4
+peso = 20.0
+segundos_visible = 3.0
+ingrediente = ExtResource("2_ing")
+probabilidad_ingrediente = 0.3

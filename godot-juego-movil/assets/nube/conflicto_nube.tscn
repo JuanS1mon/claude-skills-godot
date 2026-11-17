@@ -1,0 +1,129 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/conflicto_nube.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/ui/frame_s1.png" id="2_marco"]
+
+[node name="ConflictoNube" type="CanvasLayer"]
+layer = 60
+script = ExtResource("1_script")
+
+[node name="Raiz" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Velo" type="ColorRect" parent="Raiz"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="Panel" type="NinePatchRect" parent="Raiz"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -395.0
+offset_right = 320.0
+offset_bottom = 395.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_marco")
+region_rect = Rect2(0, 0, 110, 110)
+patch_margin_left = 26
+patch_margin_top = 26
+patch_margin_right = 26
+patch_margin_bottom = 26
+
+[node name="Caja" type="VBoxContainer" parent="Raiz/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Titulo" type="Label" parent="Raiz/Panel/Caja"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.81, 0.48, 1)
+theme_override_font_sizes/font_size = 36
+text = "DOS PARTIDAS DISTINTAS"
+horizontal_alignment = 1
+
+[node name="Explicacion" type="Label" parent="Raiz/Panel/Caja"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Hay avance guardado en la nube y también en este dispositivo. Elegí con cuál seguir: la otra se reemplaza."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TarjetaLocal" type="VBoxContainer" parent="Raiz/Panel/Caja"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Etiqueta" type="Label" parent="Raiz/Panel/Caja/TarjetaLocal"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.81, 0.48, 1)
+theme_override_font_sizes/font_size = 28
+text = "ESTE DISPOSITIVO"
+horizontal_alignment = 1
+
+[node name="Datos" type="Label" parent="Raiz/Panel/Caja/TarjetaLocal"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Ola máxima 0 · 0 misiones
+0 tripulantes · 0 cristales
+Guardada hace un momento"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Boton" type="Button" parent="Raiz/Panel/Caja/TarjetaLocal"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 28
+text = "Seguir con esta"
+
+[node name="Separador" type="HSeparator" parent="Raiz/Panel/Caja"]
+layout_mode = 2
+
+[node name="TarjetaNube" type="VBoxContainer" parent="Raiz/Panel/Caja"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Etiqueta" type="Label" parent="Raiz/Panel/Caja/TarjetaNube"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.81, 0.48, 1)
+theme_override_font_sizes/font_size = 28
+text = "LA NUBE"
+horizontal_alignment = 1
+
+[node name="Datos" type="Label" parent="Raiz/Panel/Caja/TarjetaNube"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Ola máxima 0 · 0 misiones
+0 tripulantes · 0 cristales
+Guardada hace un momento"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Boton" type="Button" parent="Raiz/Panel/Caja/TarjetaNube"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 28
+text = "Seguir con la de la nube"

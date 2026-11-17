@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://shaders/toon.gdshader" id="1_toon"]
+[ext_resource type="Shader" path="res://shaders/contorno.gdshader" id="2_contorno"]
+[ext_resource type="Texture2D" path="res://arte/texturas/tablones_a.png" id="3_tex"]
+
+[sub_resource type="ShaderMaterial" id="contorno"]
+render_priority = 0
+shader = ExtResource("2_contorno")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("contorno")
+shader = ExtResource("1_toon")
+shader_parameter/usar_textura = true
+shader_parameter/textura = ExtResource("3_tex")
+shader_parameter/metros_por_textura = Vector2(1.5, 1.5)

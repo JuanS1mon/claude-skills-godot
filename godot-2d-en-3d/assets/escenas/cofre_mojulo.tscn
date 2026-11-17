@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/caja.gd" id="1_caja"]
+[ext_resource type="PackedScene" path="res://arte/modelos/cofre_mojulo.glb" id="2_glb"]
+[ext_resource type="Script" path="res://scripts/modelo_importado.gd" id="3_limpiar"]
+[ext_resource type="Material" path="res://shaders/toon_vertice.tres" id="4_mat"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c"]
+size = Vector3(0.92, 0.94, 0.95)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c"]
+friction = 0.8
+bounce = 0.1
+
+[node name="CofreMojulo" type="RigidBody3D"]
+collision_layer = 16
+collision_mask = 23
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+mass = 3.0
+physics_material_override = SubResource("PhysicsMaterial_c")
+script = ExtResource("1_caja")
+
+[node name="Modelo" parent="." instance=ExtResource("2_glb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.432, 0.014)
+script = ExtResource("3_limpiar")
+material = ExtResource("4_mat")
+
+[node name="Forma" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_c")

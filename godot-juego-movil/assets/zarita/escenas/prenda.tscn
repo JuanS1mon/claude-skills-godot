@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/prenda.gd" id="1_prenda"]
+
+[node name="Prenda" type="Node2D"]
+script = ExtResource("1_prenda")
+
+[node name="Forma" type="Node2D" parent="."]
+
+[node name="Cuerpo" type="Polygon2D" parent="Forma" groups=["tinte"]]
+color = Color(0.9, 0.4, 0.45, 1)
+polygon = PackedVector2Array(-16, -56, 16, -56, 16, -30, -16, -30)
+
+[node name="Imagen" type="AnimatedSprite2D" parent="."]
+centered = false

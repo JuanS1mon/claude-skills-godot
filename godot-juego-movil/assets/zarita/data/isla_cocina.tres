@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MuebleData" format=3]
+
+[ext_resource type="Script" path="res://scripts/mueble_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/mueble.tscn" id="2_escena"]
+[ext_resource type="Texture2D" path="res://assets/muebles/cocina/isla_cocina.png" id="3_textura"]
+
+[resource]
+script = ExtResource("1_data")
+nombre = "Isla de cocina"
+escena = ExtResource("2_escena")
+textura = ExtResource("3_textura")
+color = Color(1, 1, 1, 1)
+tamano = Vector2(173, 164)
+huella = Vector2(150, 70)
+confort = 6
+precio = 6
+moneda = 1
+categoria = 4
+superficie = Rect2(-50, -142, 100, 28)

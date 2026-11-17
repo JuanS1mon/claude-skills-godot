@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tronco"]
+radius = 14.0
+
+[node name="Arbol" type="StaticBody2D"]
+
+[node name="Tronco" type="Polygon2D" parent="."]
+color = Color(0.4, 0.27, 0.2, 1)
+polygon = PackedVector2Array(-11, 0, 11, 0, 8, -56, -8, -56)
+
+[node name="Copa" type="Polygon2D" parent="."]
+color = Color(0.22, 0.45, 0.27, 1)
+polygon = PackedVector2Array(56, -92, 48.5, -64, 28, -43.5, 0, -36, -28, -43.5, -48.5, -64, -56, -92, -48.5, -120, -28, -140.5, 0, -148, 28, -140.5, 48.5, -120)
+
+[node name="Brillo" type="Polygon2D" parent="."]
+color = Color(0.3, 0.55, 0.32, 1)
+polygon = PackedVector2Array(20, -110, 12, -90, -10, -84, -28, -100, -18, -126, 6, -134)
+
+[node name="Colision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_tronco")

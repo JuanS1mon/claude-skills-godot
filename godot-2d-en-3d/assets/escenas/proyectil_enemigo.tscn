@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/proyectil_enemigo.gd" id="1_p"]
+[ext_resource type="Texture2D" path="res://arte/sprites/escarabajo/proyectil.png" id="2_tex"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p"]
+radius = 0.17
+
+[node name="ProyectilEnemigo" type="Area3D"]
+collision_layer = 0
+collision_mask = 19
+monitorable = false
+script = ExtResource("1_p")
+
+[node name="Forma" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_p")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+cast_shadow = 0
+pixel_size = 0.003
+texture = ExtResource("2_tex")
+
+[node name="Luz" type="OmniLight3D" parent="."]
+light_color = Color(0.7, 0.3, 1, 1)
+light_energy = 1.5
+omni_range = 2.0

@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://cun8xmufibftg"]
+
+[ext_resource type="Script" uid="uid://te04xtjmy5uy" path="res://scripts/inicio.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b0qei847fbwth" path="res://assets/inicio/fondo_inicio.png" id="2_fondo"]
+[ext_resource type="Texture2D" uid="uid://btu5mqd61vaxi" path="res://assets/inicio/titulo.png" id="3_4xtsl"]
+[ext_resource type="Texture2D" uid="uid://c4olusmvc8leb" path="res://assets/zarita/caminata/abajo/zarita_abajo_2.png" id="3_reposo_a"]
+[ext_resource type="Texture2D" uid="uid://chr6ws84liovv" path="res://assets/zarita/caminata/abajo/zarita_abajo_4.png" id="4_reposo_b"]
+[ext_resource type="Script" uid="uid://bu4b5slueqhag" path="res://scripts/sombra.gd" id="5_sombra"]
+[ext_resource type="Theme" path="res://themes/zarita.tres" id="7_tema"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_reposo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_reposo_a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_reposo_b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.6
+}]
+
+[node name="Inicio" type="CanvasLayer" unique_id=1506120274]
+script = ExtResource("1_script")
+fondo = ExtResource("2_fondo")
+
+[node name="Color" type="ColorRect" parent="." unique_id=797490286]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.98, 0.84, 0.68, 1)
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1682407631]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_fondo")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Titulo" type="TextureRect" parent="." unique_id=1885000082]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -310.0
+offset_top = 110.0
+offset_right = 310.0
+offset_bottom = 400.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("3_4xtsl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnclaZarita" type="Control" parent="." unique_id=1332441058]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Sombra" type="Node2D" parent="AnclaZarita" unique_id=584965638]
+position = Vector2(0, -312)
+script = ExtResource("5_sombra")
+ancho_base = 120.0
+profundidad_base = 34.0
+alto_objeto = 300.0
+capa_z = 0
+direccion_fija = Vector2(0.12, 1)
+largo_fijo = 90.0
+alfa_fijo = 0.22
+
+[node name="Zarita" type="AnimatedSprite2D" parent="AnclaZarita" unique_id=472566496]
+position = Vector2(0, -461.00006)
+scale = Vector2(0.62, 0.62)
+sprite_frames = SubResource("SpriteFrames_reposo")
+
+[node name="BotonJugar" type="Button" parent="." unique_id=739394380]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -300.0
+offset_right = 170.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("7_tema")
+theme_override_font_sizes/font_size = 44
+text = "Jugar"
+
+[node name="Fundido" type="ColorRect" parent="." unique_id=1066360332]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

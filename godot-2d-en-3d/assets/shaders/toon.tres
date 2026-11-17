@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://shaders/toon.gdshader" id="1_toon"]
+[ext_resource type="Shader" path="res://shaders/contorno.gdshader" id="2_contorno"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_contorno"]
+render_priority = 0
+shader = ExtResource("2_contorno")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_contorno")
+shader = ExtResource("1_toon")

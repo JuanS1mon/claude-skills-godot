@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://yqujlkvxdrec"]
+
+[ext_resource type="Script" uid="uid://kyfrus0q4rls" path="res://scripts/mueble.gd" id="1_s8a5l"]
+
+[sub_resource type="Gradient" id="Gradient_blanco"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_base"]
+gradient = SubResource("Gradient_blanco")
+width = 120
+height = 120
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(120, 120)
+
+[node name="Mueble" type="Area2D" unique_id=1247014787 groups=["muebles"]]
+script = ExtResource("1_s8a5l")
+textura = SubResource("GradientTexture2D_base")
+color = Color(1, 0.8811667, 0.69, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1111814891]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=312698560]
+shape = SubResource("RectangleShape2D_g4v7s")

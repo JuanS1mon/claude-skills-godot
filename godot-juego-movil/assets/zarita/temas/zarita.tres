@@ -1,0 +1,256 @@
+[gd_resource type="Theme" format=3 uid="uid://dnqdesgx4hhx7"]
+
+[ext_resource type="Texture2D" uid="uid://bdsnt4w2qxp4k" path="res://assets/ui/boton_activo.png" id="tex_boton_activo"]
+[ext_resource type="Texture2D" uid="uid://bm3j5432icv87" path="res://assets/ui/boton_normal.png" id="tex_boton_normal"]
+[ext_resource type="Texture2D" uid="uid://gkerot6xf6o1" path="res://assets/ui/boton_presionado.png" id="tex_boton_presionado"]
+[ext_resource type="Texture2D" uid="uid://ceu133xl54xtc" path="res://assets/ui/casilla.png" id="tex_casilla"]
+[ext_resource type="Texture2D" uid="uid://u1lfe7liw6j1" path="res://assets/ui/panel.png" id="tex_panel"]
+[ext_resource type="Texture2D" uid="uid://bw1kojhlyaq51" path="res://assets/ui/pastilla.png" id="tex_pastilla"]
+[ext_resource type="Texture2D" uid="uid://co11ref4tryui" path="res://assets/ui/perilla.png" id="tex_perilla"]
+[ext_resource type="Texture2D" uid="uid://cdol73sdx0wt0" path="res://assets/ui/pestana.png" id="tex_pestana"]
+[ext_resource type="Texture2D" uid="uid://dlsrjeu33wane" path="res://assets/ui/pestana_activa.png" id="tex_pestana_activa"]
+
+[sub_resource type="StyleBoxTexture" id="sb_6"]
+texture = ExtResource("tex_boton_presionado")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+modulate_color = Color(0.85, 0.85, 0.85, 0.75)
+
+[sub_resource type="StyleBoxEmpty" id="sb_0"]
+
+[sub_resource type="StyleBoxTexture" id="sb_4"]
+texture = ExtResource("tex_boton_normal")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="sb_5"]
+texture = ExtResource("tex_boton_presionado")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="sb_7"]
+texture = ExtResource("tex_boton_activo")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="sb_3"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+texture = ExtResource("tex_boton_presionado")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+modulate_color = Color(0.85, 0.85, 0.85, 0.75)
+
+[sub_resource type="StyleBoxTexture" id="sb_1"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+texture = ExtResource("tex_boton_normal")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="sb_2"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+texture = ExtResource("tex_boton_presionado")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="sb_13"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("tex_casilla")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.85, 0.85, 0.85, 0.75)
+
+[sub_resource type="StyleBoxTexture" id="sb_11"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("tex_casilla")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="sb_12"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("tex_boton_presionado")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxFlat" id="sb_17"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.957, 0.627, 0.675, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.455, 0.267, 0.259, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="sb_16"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.98, 0.85, 0.69, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.455, 0.267, 0.259, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxTexture" id="sb_14"]
+content_margin_left = 24.0
+content_margin_top = 20.0
+content_margin_right = 24.0
+content_margin_bottom = 20.0
+texture = ExtResource("tex_panel")
+texture_margin_left = 28.0
+texture_margin_top = 28.0
+texture_margin_right = 28.0
+texture_margin_bottom = 28.0
+
+[sub_resource type="StyleBoxTexture" id="sb_15"]
+content_margin_left = 22.0
+content_margin_top = 6.0
+content_margin_right = 22.0
+content_margin_bottom = 6.0
+texture = ExtResource("tex_pastilla")
+texture_margin_left = 28.0
+texture_margin_top = 28.0
+texture_margin_right = 28.0
+texture_margin_bottom = 28.0
+
+[sub_resource type="StyleBoxTexture" id="sb_10"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("tex_pestana")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0.85, 0.85, 0.85, 0.75)
+
+[sub_resource type="StyleBoxTexture" id="sb_8"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("tex_pestana")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="sb_9"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("tex_pestana_activa")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[resource]
+BotonIcono/base_type = &"Button"
+BotonIcono/styles/disabled = SubResource("sb_6")
+BotonIcono/styles/focus = SubResource("sb_0")
+BotonIcono/styles/hover = SubResource("sb_4")
+BotonIcono/styles/hover_pressed = SubResource("sb_5")
+BotonIcono/styles/normal = SubResource("sb_4")
+BotonIcono/styles/pressed = SubResource("sb_5")
+BotonIconoLuz/base_type = &"Button"
+BotonIconoLuz/styles/disabled = SubResource("sb_6")
+BotonIconoLuz/styles/focus = SubResource("sb_0")
+BotonIconoLuz/styles/hover = SubResource("sb_4")
+BotonIconoLuz/styles/hover_pressed = SubResource("sb_4")
+BotonIconoLuz/styles/normal = SubResource("sb_4")
+BotonIconoLuz/styles/pressed = SubResource("sb_4")
+BotonIconoToggle/base_type = &"Button"
+BotonIconoToggle/styles/disabled = SubResource("sb_6")
+BotonIconoToggle/styles/focus = SubResource("sb_0")
+BotonIconoToggle/styles/hover = SubResource("sb_4")
+BotonIconoToggle/styles/hover_pressed = SubResource("sb_7")
+BotonIconoToggle/styles/normal = SubResource("sb_4")
+BotonIconoToggle/styles/pressed = SubResource("sb_7")
+Button/colors/font_color = Color(0.455, 0.267, 0.259, 1)
+Button/colors/font_disabled_color = Color(0.455, 0.267, 0.259, 0.5)
+Button/colors/font_focus_color = Color(0.455, 0.267, 0.259, 1)
+Button/colors/font_hover_color = Color(0.455, 0.267, 0.259, 1)
+Button/colors/font_hover_pressed_color = Color(0.455, 0.267, 0.259, 1)
+Button/colors/font_pressed_color = Color(0.455, 0.267, 0.259, 1)
+Button/font_sizes/font_size = 24
+Button/styles/disabled = SubResource("sb_3")
+Button/styles/focus = SubResource("sb_0")
+Button/styles/hover = SubResource("sb_1")
+Button/styles/hover_pressed = SubResource("sb_2")
+Button/styles/normal = SubResource("sb_1")
+Button/styles/pressed = SubResource("sb_2")
+Casilla/base_type = &"Button"
+Casilla/styles/disabled = SubResource("sb_13")
+Casilla/styles/focus = SubResource("sb_0")
+Casilla/styles/hover = SubResource("sb_11")
+Casilla/styles/hover_pressed = SubResource("sb_12")
+Casilla/styles/normal = SubResource("sb_11")
+Casilla/styles/pressed = SubResource("sb_12")
+HSlider/icons/grabber = ExtResource("tex_perilla")
+HSlider/icons/grabber_disabled = ExtResource("tex_perilla")
+HSlider/icons/grabber_highlight = ExtResource("tex_perilla")
+HSlider/styles/grabber_area = SubResource("sb_17")
+HSlider/styles/grabber_area_highlight = SubResource("sb_17")
+HSlider/styles/slider = SubResource("sb_16")
+Label/colors/font_color = Color(0.455, 0.267, 0.259, 1)
+Label/font_sizes/font_size = 22
+PanelContainer/styles/panel = SubResource("sb_14")
+Pastilla/base_type = &"PanelContainer"
+Pastilla/styles/panel = SubResource("sb_15")
+Pestana/base_type = &"Button"
+Pestana/font_sizes/font_size = 18
+Pestana/styles/disabled = SubResource("sb_10")
+Pestana/styles/focus = SubResource("sb_0")
+Pestana/styles/hover = SubResource("sb_8")
+Pestana/styles/hover_pressed = SubResource("sb_9")
+Pestana/styles/normal = SubResource("sb_8")
+Pestana/styles/pressed = SubResource("sb_9")

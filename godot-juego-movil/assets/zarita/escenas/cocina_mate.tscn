@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/cocina_mate.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/muebles/cocina/cocina_horno.png" id="2"]
+
+[node name="CocinaMate" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Imagen" type="Sprite2D" parent="."]
+position = Vector2(4, 63)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("2")
+
+[node name="Brasa" type="Polygon2D" parent="."]
+color = Color(1, 0.3, 0.1, 0)
+polygon = PackedVector2Array(52, 0, 51, 5.1, 48, 9.9, 43.2, 14.4, 36.8, 18.4, 28.9, 21.6, 19.9, 24, 10.1, 25.5, 0, 26, -10.1, 25.5, -19.9, 24, -28.9, 21.6, -36.8, 18.4, -43.2, 14.4, -48, 9.9, -51, 5.1, -52, 0, -51, -5.1, -48, -9.9, -43.2, -14.4, -36.8, -18.4, -28.9, -21.6, -19.9, -24, -10.1, -25.5, 0, -26, 10.1, -25.5, 19.9, -24, 28.9, -21.6, 36.8, -18.4, 43.2, -14.4, 48, -9.9, 51, -5.1)

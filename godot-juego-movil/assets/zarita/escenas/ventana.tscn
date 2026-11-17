@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bkrp3yi3bo0as"]
+
+[ext_resource type="Script" uid="uid://kyfrus0q4rls" path="res://scripts/mueble.gd" id="1_mueble"]
+[ext_resource type="Script" uid="uid://7w4ej1vtm1ny" path="res://scripts/ventana.gd" id="2_ventana"]
+[ext_resource type="Texture2D" uid="uid://bdl851e8bal3o" path="res://assets/ventanas/ventana_rosa_cristal.png" id="3_nv37t"]
+[ext_resource type="Texture2D" uid="uid://sntyp8okhdiv" path="res://assets/ventanas/ventana_rosa_marco.png" id="4_hx4ku"]
+
+[node name="VentanaMueble" type="Area2D" unique_id=1162293586 groups=["muebles"]]
+script = ExtResource("1_mueble")
+bloquea = false
+solo_en_pared = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1819851142]
+position = Vector2(0, -60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=102137774]
+
+[node name="Visual" type="Node2D" parent="." unique_id=1623823119]
+z_index = -9
+script = ExtResource("2_ventana")
+
+[node name="Cuerpo" type="Node2D" parent="Visual" unique_id=528189215]
+scale = Vector2(0.60240966, 0.60240966)
+
+[node name="Cristal" type="Sprite2D" parent="Visual/Cuerpo" unique_id=290311923]
+clip_children = 1
+position = Vector2(-163.5, -249)
+texture = ExtResource("3_nv37t")
+centered = false
+
+[node name="Cielo" type="Node2D" parent="Visual/Cuerpo/Cristal" unique_id=874534974]
+
+[node name="Marco" type="Sprite2D" parent="Visual/Cuerpo" unique_id=1973684045]
+position = Vector2(-163.5, -249)
+texture = ExtResource("4_hx4ku")
+centered = false
+
+[node name="LuzSol" type="Polygon2D" parent="Visual" unique_id=1555163816]
+
+[node name="LuzLuna" type="Polygon2D" parent="Visual" unique_id=143569923]

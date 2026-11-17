@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://arte/sprites/slime/quieto_0.png" id="quieto_0"]
+[ext_resource type="Texture2D" path="res://arte/sprites/slime/quieto_1.png" id="quieto_1"]
+[ext_resource type="Texture2D" path="res://arte/sprites/slime/quieto_2.png" id="quieto_2"]
+[ext_resource type="Texture2D" path="res://arte/sprites/slime/saltar.png" id="saltar"]
+[ext_resource type="Texture2D" path="res://arte/sprites/slime/golpe.png" id="golpe"]
+[ext_resource type="Texture2D" path="res://arte/sprites/slime/derrotado.png" id="derrotado"]
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("quieto_0")}, {"duration": 1.0, "texture": ExtResource("quieto_1")}, {"duration": 1.0, "texture": ExtResource("quieto_0")}, {"duration": 1.0, "texture": ExtResource("quieto_2")}],
+"loop": true,
+"name": &"quieto",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("saltar")}],
+"loop": false,
+"name": &"saltar",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("golpe")}],
+"loop": false,
+"name": &"golpe",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("derrotado")}],
+"loop": false,
+"name": &"derrotado",
+"speed": 5.0
+}]

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cba73sm7lu00a"]
+
+[ext_resource type="Script" uid="uid://mjnpsv7vjbc6" path="res://scripts/jugador.gd" id="1_jug"]
+[ext_resource type="Resource" path="res://datos/jugador_stats.tres" id="2_stats"]
+[ext_resource type="PackedScene" path="res://escenas/bala.tscn" id="3_bala"]
+[ext_resource type="SpriteFrames" path="res://datos/zorro_frames.tres" id="4_frames"]
+[ext_resource type="Texture2D" uid="uid://b70emhh2pv52w" path="res://arte/sprites/iconos/golpe_efecto.png" id="5_golpe"]
+[ext_resource type="Texture2D" path="res://arte/sprites/escarabajo/caparazon.png" id="6_capa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j"]
+radius = 0.4
+height = 1.6
+
+[sub_resource type="StandardMaterial3D" id="Mat_mira"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0.39215687, 0.23921569, 0.24705882, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mira"]
+material = SubResource("Mat_mira")
+radius = 0.07
+height = 0.14
+radial_segments = 12
+rings = 6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_zona"]
+size = Vector3(1.4, 1.8, 2)
+
+[node name="Jugador" type="CharacterBody3D" unique_id=2143680046]
+collision_layer = 2
+collision_mask = 21
+axis_lock_linear_z = true
+floor_snap_length = 0.2
+script = ExtResource("1_jug")
+stats = ExtResource("2_stats")
+escena_bala = ExtResource("3_bala")
+
+[node name="Colision" type="CollisionShape3D" parent="." unique_id=99178447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_j")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=474065894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93, 0)
+pixel_size = 0.0095
+shaded = true
+alpha_cut = 2
+sprite_frames = ExtResource("4_frames")
+animation = &"quieto"
+autoplay = "quieto"
+
+[node name="Boca" type="Marker3D" parent="." unique_id=1842733843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.95, 0)
+
+[node name="Destello" type="OmniLight3D" parent="Boca" unique_id=1449045691]
+light_color = Color(1, 0.75, 0.35, 1)
+light_energy = 4.0
+omni_range = 4.0
+
+[node name="Mira" type="MeshInstance3D" parent="." unique_id=11767124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.95, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_mira")
+
+[node name="EfectoGolpe" type="Sprite3D" parent="." unique_id=87811054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9977548, 0.97135, 0.04075668)
+cast_shadow = 0
+modulate = Color(0.7529412, 0.40392157, 0.17254902, 1)
+pixel_size = 0.004
+texture = ExtResource("5_golpe")
+
+[node name="Caparazon" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, 0.05)
+visible = false
+modulate = Color(1, 0.8, 0.62, 1)
+pixel_size = 0.0085
+shaded = true
+alpha_cut = 2
+texture = ExtResource("6_capa")
+
+[node name="PuntoAgarre" type="Marker3D" parent="." unique_id=1564726041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 1.66, 0.05)
+
+[node name="ZonaAgarre" type="Area3D" parent="." unique_id=488511165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.8, 0)
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+
+[node name="Forma" type="CollisionShape3D" parent="ZonaAgarre" unique_id=1289515452]
+shape = SubResource("BoxShape3D_zona")

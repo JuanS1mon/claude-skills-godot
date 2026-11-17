@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://5opkk5pyb7rs"]
+
+[ext_resource type="Script" uid="uid://c5qa6egxpg6yu" path="res://scripts/bichito.gd" id="1_bichito"]
+[ext_resource type="SpriteFrames" path="res://data/bichitos_frames/comun.tres" id="2_frames"]
+
+[node name="Bichito" type="Node2D" unique_id=1877528532]
+script = ExtResource("1_bichito")
+
+[node name="Halo" type="Polygon2D" parent="." unique_id=1619995748]
+color = Color(1, 0.9, 0.4, 0.1)
+polygon = PackedVector2Array(46.8, 0, 45.2, 12.1, 40.5, 23.4, 33.1, 33.1, 23.4, 40.5, 12.1, 45.2, 0, 46.8, -12.1, 45.2, -23.4, 40.5, -33.1, 33.1, -40.5, 23.4, -45.2, 12.1, -46.8, 0, -45.2, -12.1, -40.5, -23.4, -33.1, -33.1, -23.4, -40.5, -12.1, -45.2, 0, -46.8, 12.1, -45.2, 23.4, -40.5, 33.1, -33.1, 40.5, -23.4, 45.2, -12.1)
+
+[node name="Resplandor" type="Polygon2D" parent="." unique_id=341474127]
+color = Color(1, 0.9, 0.4, 0.22)
+polygon = PackedVector2Array(28.6, 0, 27.6, 7.4, 24.8, 14.3, 20.2, 20.2, 14.3, 24.8, 7.4, 27.6, 0, 28.6, -7.4, 27.6, -14.3, 24.8, -20.2, 20.2, -24.8, 14.3, -27.6, 7.4, -28.6, 0, -27.6, -7.4, -24.8, -14.3, -20.2, -20.2, -14.3, -24.8, -7.4, -27.6, 0, -28.6, 7.4, -27.6, 14.3, -24.8, 20.2, -20.2, 24.8, -14.3, 27.6, -7.4)
+
+[node name="Nucleo" type="Polygon2D" parent="." unique_id=1619765946]
+color = Color(1, 0.96, 0.7, 1)
+polygon = PackedVector2Array(11, 0, 10.6, 2.8, 9.5, 5.5, 7.8, 7.8, 5.5, 9.5, 2.8, 10.6, 0, 11, -2.8, 10.6, -5.5, 9.5, -7.8, 7.8, -9.5, 5.5, -10.6, 2.8, -11, 0, -10.6, -2.8, -9.5, -5.5, -7.8, -7.8, -5.5, -9.5, -2.8, -10.6, 0, -11, 2.8, -10.6, 5.5, -9.5, 7.8, -7.8, 9.5, -5.5, 10.6, -2.8)
+
+[node name="Imagen" type="AnimatedSprite2D" parent="." unique_id=1764724682]
+sprite_frames = ExtResource("2_frames")
+autoplay = "default"
+centered = false
+offset = Vector2(-68, -72)

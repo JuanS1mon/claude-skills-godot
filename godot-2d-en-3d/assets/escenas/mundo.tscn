@@ -1,0 +1,381 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://shaders/toon.tres" id="1_toon"]
+[ext_resource type="PackedScene" path="res://escenas/jugador.tscn" id="2_jug"]
+[ext_resource type="PackedScene" path="res://escenas/enemigo_dummy.tscn" id="3_enem"]
+[ext_resource type="PackedScene" path="res://escenas/caja.tscn" id="4_caja"]
+[ext_resource type="Script" path="res://scripts/camara.gd" id="5_cam"]
+[ext_resource type="Script" path="res://scripts/hud_debug.gd" id="6_hud"]
+[ext_resource type="Material" path="res://shaders/mat_piso.tres" id="8_piso"]
+[ext_resource type="Material" path="res://shaders/mat_piedra.tres" id="9_piedra"]
+[ext_resource type="Material" path="res://shaders/mat_tablones.tres" id="10_tablones"]
+[ext_resource type="Texture2D" path="res://arte/texturas/matas.png" id="11_matas"]
+[ext_resource type="Texture2D" path="res://arte/texturas/fondo.jpg" id="12_fondo"]
+[ext_resource type="Script" path="res://scripts/fondo_parallax.gd" id="13_parallax"]
+[ext_resource type="PackedScene" path="res://escenas/escarabajo.tscn" id="14_escarabajo"]
+[ext_resource type="PackedScene" path="res://escenas/estrella.tscn" id="15_estrella"]
+[ext_resource type="Texture2D" path="res://arte/sprites/iconos/corazon.png" id="16_corazon"]
+[ext_resource type="Texture2D" path="res://arte/sprites/iconos/corazon_vacio.png" id="17_corazon_vacio"]
+[ext_resource type="PackedScene" path="res://escenas/volador.tscn" id="18_volador"]
+[ext_resource type="PackedScene" path="res://escenas/slime.tscn" id="19_slime"]
+[ext_resource type="PackedScene" path="res://escenas/jefe.tscn" id="20_jefe"]
+[ext_resource type="Script" path="res://scripts/arena_jefe.gd" id="21_arena"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m"]
+sky_top_color = Color(0.35, 0.55, 0.85, 1)
+sky_horizon_color = Color(0.8, 0.82, 0.9, 1)
+ground_horizon_color = Color(0.8, 0.82, 0.9, 1)
+
+[sub_resource type="Sky" id="Sky_m"]
+sky_material = SubResource("ProceduralSkyMaterial_m")
+
+[sub_resource type="Environment" id="Environment_m"]
+background_mode = 2
+sky = SubResource("Sky_m")
+ambient_light_source = 3
+ambient_light_energy = 0.6
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_piso"]
+size = Vector3(100, 4, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_piso"]
+size = Vector3(100, 4, 5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_matas"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+cull_mode = 2
+albedo_texture = ExtResource("11_matas")
+uv1_scale = Vector3(29.4, 1, 1)
+texture_repeat = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_matas"]
+material = SubResource("Mat_matas")
+size = Vector2(100, 0.57)
+
+[sub_resource type="StandardMaterial3D" id="Mat_fondo"]
+shading_mode = 0
+albedo_texture = ExtResource("12_fondo")
+
+[sub_resource type="QuadMesh" id="QuadMesh_fondo"]
+material = SubResource("Mat_fondo")
+size = Vector2(48, 26.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bajo"]
+size = Vector3(1.5, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bajo"]
+size = Vector3(1.5, 1, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_alto"]
+size = Vector3(1.5, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_alto"]
+size = Vector3(1.5, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_plat"]
+size = Vector3(3, 0.4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_plat"]
+size = Vector3(3, 0.4, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pared_izq"]
+size = Vector3(1, 10, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pared_izq"]
+size = Vector3(1, 10, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_piso_arena"]
+size = Vector3(30, 4, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_piso_arena"]
+size = Vector3(30, 4, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_entrada"]
+size = Vector3(2.5, 6, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pared_der"]
+size = Vector3(1, 7.8, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pared_der"]
+size = Vector3(1, 7.8, 2)
+
+[node name="Mundo" type="Node3D"]
+
+[node name="Entorno" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m")
+
+[node name="Sol" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.383, 0.3214, 0, 0.6428, 0.766, -0.5, -0.6634, 0.5567, 0, 10, 0)
+light_energy = 1.2
+shadow_enabled = true
+directional_shadow_max_distance = 40.0
+
+[node name="Piso" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="Piso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -1)
+mesh = SubResource("BoxMesh_piso")
+surface_material_override/0 = ExtResource("8_piso")
+instance_shader_parameters/color = Color(0.45, 0.72, 0.3, 1)
+
+[node name="Forma" type="CollisionShape3D" parent="Piso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -1)
+shape = SubResource("BoxShape3D_piso")
+
+[node name="Matas" type="MeshInstance3D" parent="Piso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 1.52)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_matas")
+
+[node name="Fondo" type="MeshInstance3D" parent="." node_paths=PackedStringArray("camara")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -12)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_fondo")
+script = ExtResource("13_parallax")
+camara = NodePath("../Camara")
+
+[node name="Obstaculos" type="Node3D" parent="."]
+
+[node name="BloqueBajo" type="StaticBody3D" parent="Obstaculos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 0)
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="Obstaculos/BloqueBajo"]
+mesh = SubResource("BoxMesh_bajo")
+surface_material_override/0 = ExtResource("9_piedra")
+
+[node name="Forma" type="CollisionShape3D" parent="Obstaculos/BloqueBajo"]
+shape = SubResource("BoxShape3D_bajo")
+
+[node name="BloqueAlto" type="StaticBody3D" parent="Obstaculos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0)
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="Obstaculos/BloqueAlto"]
+mesh = SubResource("BoxMesh_alto")
+surface_material_override/0 = ExtResource("9_piedra")
+
+[node name="Forma" type="CollisionShape3D" parent="Obstaculos/BloqueAlto"]
+shape = SubResource("BoxShape3D_alto")
+
+[node name="Plataforma" type="StaticBody3D" parent="Obstaculos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.6, 0)
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="Obstaculos/Plataforma"]
+mesh = SubResource("BoxMesh_plat")
+surface_material_override/0 = ExtResource("10_tablones")
+
+[node name="Forma" type="CollisionShape3D" parent="Obstaculos/Plataforma"]
+shape = SubResource("BoxShape3D_plat")
+
+[node name="Chimenea" type="Node3D" parent="."]
+
+[node name="ParedIzq" type="StaticBody3D" parent="Chimenea" groups=["pared"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 5, 0)
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="Chimenea/ParedIzq"]
+mesh = SubResource("BoxMesh_pared_izq")
+surface_material_override/0 = ExtResource("9_piedra")
+
+[node name="Forma" type="CollisionShape3D" parent="Chimenea/ParedIzq"]
+shape = SubResource("BoxShape3D_pared_izq")
+
+[node name="ParedDer" type="StaticBody3D" parent="Chimenea" groups=["pared"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 6.1, 0)
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="Chimenea/ParedDer"]
+mesh = SubResource("BoxMesh_pared_der")
+surface_material_override/0 = ExtResource("9_piedra")
+
+[node name="Forma" type="CollisionShape3D" parent="Chimenea/ParedDer"]
+shape = SubResource("BoxShape3D_pared_der")
+
+[node name="EstrellaChimenea" parent="Chimenea" instance=ExtResource("15_estrella")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 9.2, 0)
+disparo = "triple"
+
+[node name="PuzzleCajas" type="Node3D" parent="."]
+
+[node name="Cornisa" type="StaticBody3D" parent="PuzzleCajas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 6.6, 0)
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="PuzzleCajas/Cornisa"]
+mesh = SubResource("BoxMesh_plat")
+surface_material_override/0 = ExtResource("10_tablones")
+
+[node name="Forma" type="CollisionShape3D" parent="PuzzleCajas/Cornisa"]
+shape = SubResource("BoxShape3D_plat")
+
+[node name="EstrellaCornisa" parent="PuzzleCajas" instance=ExtResource("15_estrella")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 7.6, 0)
+disparo = "rebote"
+
+[node name="Caja4" parent="PuzzleCajas" instance=ExtResource("4_caja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0.45, 0)
+
+[node name="Caja5" parent="PuzzleCajas" instance=ExtResource("4_caja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0.45, 0)
+
+[node name="Caja6" parent="PuzzleCajas" instance=ExtResource("4_caja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7, 0.45, 0)
+
+[node name="Caja1" parent="." instance=ExtResource("4_caja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.45, 0)
+
+[node name="Caja2" parent="." instance=ExtResource("4_caja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.45, 0)
+
+[node name="Caja3" parent="." instance=ExtResource("4_caja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.36, 0)
+
+[node name="EnemigoDummy" parent="." instance=ExtResource("3_enem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+
+[node name="Escarabajo" parent="." instance=ExtResource("14_escarabajo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0.1, 0)
+
+[node name="EstrellaEscarabajo" parent="." instance=ExtResource("15_estrella")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 1, 0)
+disparo = "explosivo"
+
+[node name="Volador" parent="." instance=ExtResource("18_volador")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 4.2, 0)
+
+[node name="Slime" parent="." instance=ExtResource("19_slime")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0.1, 0)
+
+[node name="PlataformaCielo" type="StaticBody3D" parent="Obstaculos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 10.5, 0)
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="Obstaculos/PlataformaCielo"]
+mesh = SubResource("BoxMesh_plat")
+surface_material_override/0 = ExtResource("10_tablones")
+
+[node name="Forma" type="CollisionShape3D" parent="Obstaculos/PlataformaCielo"]
+shape = SubResource("BoxShape3D_plat")
+
+[node name="ParedSlime" type="StaticBody3D" parent="Obstaculos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 5, 0)
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="Obstaculos/ParedSlime"]
+mesh = SubResource("BoxMesh_pared_izq")
+surface_material_override/0 = ExtResource("9_piedra")
+
+[node name="Forma" type="CollisionShape3D" parent="Obstaculos/ParedSlime"]
+shape = SubResource("BoxShape3D_pared_izq")
+
+[node name="ArenaJefe" type="Node3D" parent="." node_paths=PackedStringArray("jefe", "puerta", "estrella_premio")]
+script = ExtResource("21_arena")
+jefe = NodePath("Jefe")
+puerta = NodePath("Puerta")
+estrella_premio = NodePath("EstrellaJefe")
+x_izq = 54.5
+x_der = 75.5
+
+[node name="PisoArena" type="StaticBody3D" parent="ArenaJefe"]
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="ArenaJefe/PisoArena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -2, -1)
+mesh = SubResource("BoxMesh_piso_arena")
+surface_material_override/0 = ExtResource("8_piso")
+instance_shader_parameters/color = Color(0.45, 0.72, 0.3, 1)
+
+[node name="Forma" type="CollisionShape3D" parent="ArenaJefe/PisoArena"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -2, -1)
+shape = SubResource("BoxShape3D_piso_arena")
+
+[node name="Puerta" type="StaticBody3D" parent="ArenaJefe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 5, 0)
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="ArenaJefe/Puerta"]
+mesh = SubResource("BoxMesh_pared_izq")
+surface_material_override/0 = ExtResource("9_piedra")
+
+[node name="Forma" type="CollisionShape3D" parent="ArenaJefe/Puerta"]
+shape = SubResource("BoxShape3D_pared_izq")
+
+[node name="ParedDerArena" type="StaticBody3D" parent="ArenaJefe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 5, 0)
+collision_mask = 0
+
+[node name="Malla" type="MeshInstance3D" parent="ArenaJefe/ParedDerArena"]
+mesh = SubResource("BoxMesh_pared_izq")
+surface_material_override/0 = ExtResource("9_piedra")
+
+[node name="Forma" type="CollisionShape3D" parent="ArenaJefe/ParedDerArena"]
+shape = SubResource("BoxShape3D_pared_izq")
+
+[node name="Entrada" type="Area3D" parent="ArenaJefe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5, 3, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="Forma" type="CollisionShape3D" parent="ArenaJefe/Entrada"]
+shape = SubResource("BoxShape3D_entrada")
+
+[node name="Jefe" parent="ArenaJefe" instance=ExtResource("20_jefe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0.1, 0)
+
+[node name="EstrellaJefe" parent="ArenaJefe" instance=ExtResource("15_estrella")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 1.3, 0)
+
+[node name="Jugador" parent="." instance=ExtResource("2_jug")]
+
+[node name="Camara" type="Camera3D" parent="." node_paths=PackedStringArray("objetivo")]
+transform = Transform3D(1, 0, 0, 0, 0.9848, 0.1736, 0, -0.1736, 0.9848, 0, 3, 10.5)
+fov = 50.0
+script = ExtResource("5_cam")
+objetivo = NodePath("../Jugador")
+
+[node name="HudDebug" type="CanvasLayer" parent="." node_paths=PackedStringArray("jugador")]
+script = ExtResource("6_hud")
+jugador = NodePath("../Jugador")
+corazon_lleno = ExtResource("16_corazon")
+corazon_vacio = ExtResource("17_corazon_vacio")
+
+[node name="Texto" type="Label" parent="HudDebug"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 760.0
+offset_bottom = 200.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 14
+
+[node name="Arriba" type="HBoxContainer" parent="HudDebug"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = 52.0
+grow_horizontal = 0
+alignment = 2
+theme_override_constants/separation = 18
+
+[node name="Corazones" type="HBoxContainer" parent="HudDebug/Arriba"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Estrellas" type="Label" parent="HudDebug/Arriba"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.3, 1)
+theme_override_colors/font_outline_color = Color(0.25, 0.15, 0.05, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "★ 0 / 3"

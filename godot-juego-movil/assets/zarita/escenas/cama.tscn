@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c87ehd7gh4ela"]
+
+[ext_resource type="PackedScene" uid="uid://yqujlkvxdrec" path="res://scenes/mueble.tscn" id="1_v6k6s"]
+
+[sub_resource type="Gradient" id="Gradient_sje03"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cama"]
+gradient = SubResource("Gradient_sje03")
+width = 160
+height = 240
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnf4b"]
+size = Vector2(160, 240)
+
+[node name="Cama" unique_id=1247014787 instance=ExtResource("1_v6k6s")]
+textura = SubResource("GradientTexture2D_cama")
+color = Color(1, 0.69, 0.9328333, 1)
+tamano = Vector2(160, 240)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=312698560]
+shape = SubResource("RectangleShape2D_vnf4b")

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MuebleData" format=3]
+
+[ext_resource type="Script" path="res://scripts/mueble_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://scenes/mueble.tscn" id="2_escena"]
+[ext_resource type="Texture2D" path="res://assets/muebles/mesas/mesa_redonda.png" id="3_textura"]
+
+[resource]
+script = ExtResource("1_data")
+nombre = "Mesa redonda"
+escena = ExtResource("2_escena")
+textura = ExtResource("3_textura")
+color = Color(1, 1, 1, 1)
+tamano = Vector2(105, 100)
+huella = Vector2(80, 40)
+precio = 90
+moneda = 0
+categoria = 0
+superficie = Rect2(-35, -84, 70, 26)

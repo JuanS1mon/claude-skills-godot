@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dxd0c1uy6elr6"]
+
+[ext_resource type="Script" uid="uid://cnntbby8jxvg" path="res://scripts/musica.gd" id="1_wskxf"]
+[ext_resource type="AudioStream" uid="uid://cconqjpcfdmj4" path="res://assets/musica/piano_calmo.mp3" id="2_8c2qo"]
+
+[node name="Musica" type="Node" unique_id=1876550421]
+script = ExtResource("1_wskxf")
+pistas = Array[AudioStream]([ExtResource("2_8c2qo")])
+
+[node name="Reproductor" type="AudioStreamPlayer" parent="." unique_id=1301441024]

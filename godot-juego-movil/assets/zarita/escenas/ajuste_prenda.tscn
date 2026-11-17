@@ -1,0 +1,76 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ajuste_prenda.gd" id="1_script"]
+[ext_resource type="Resource" path="res://data/prendas/bufanda_tejida.tres" id="2_ficha"]
+[ext_resource type="Texture2D" path="res://assets/zarita/caminata/abajo/zarita_abajo_2.png" id="3_zarita"]
+[ext_resource type="Texture2D" path="res://assets/zarita/caminata/arriba/zarita_arriba_2.png" id="4_zarita"]
+[ext_resource type="Texture2D" path="res://assets/zarita/caminata/derecha/zarita_derecha_2.png" id="5_zarita"]
+[ext_resource type="Texture2D" path="res://assets/zarita/caminata/izquierda/zarita_izquierda_2.png" id="6_zarita"]
+
+[node name="AjustePrenda" type="Node2D"]
+script = ExtResource("1_script")
+ficha = ExtResource("2_ficha")
+
+[node name="VistaAbajo" type="Node2D" parent="."]
+position = Vector2(200, 260)
+
+[node name="Zarita" type="Sprite2D" parent="VistaAbajo"]
+texture = ExtResource("3_zarita")
+
+[node name="Capa" type="Sprite2D" parent="VistaAbajo/Zarita"]
+
+[node name="Titulo" type="Label" parent="VistaAbajo"]
+offset_left = -80.0
+offset_top = 260.0
+offset_right = 80.0
+offset_bottom = 290.0
+text = "abajo"
+horizontal_alignment = 1
+
+[node name="VistaArriba" type="Node2D" parent="."]
+position = Vector2(560, 260)
+
+[node name="Zarita" type="Sprite2D" parent="VistaArriba"]
+texture = ExtResource("4_zarita")
+
+[node name="Capa" type="Sprite2D" parent="VistaArriba/Zarita"]
+
+[node name="Titulo" type="Label" parent="VistaArriba"]
+offset_left = -80.0
+offset_top = 260.0
+offset_right = 80.0
+offset_bottom = 290.0
+text = "arriba"
+horizontal_alignment = 1
+
+[node name="VistaDerecha" type="Node2D" parent="."]
+position = Vector2(1000, 260)
+
+[node name="Zarita" type="Sprite2D" parent="VistaDerecha"]
+texture = ExtResource("5_zarita")
+
+[node name="Capa" type="Sprite2D" parent="VistaDerecha/Zarita"]
+
+[node name="Titulo" type="Label" parent="VistaDerecha"]
+offset_left = -80.0
+offset_top = 260.0
+offset_right = 80.0
+offset_bottom = 290.0
+text = "derecha"
+horizontal_alignment = 1
+
+[node name="VistaIzquierda" type="Node2D" parent="."]
+position = Vector2(1500, 260)
+
+[node name="Zarita" type="Sprite2D" parent="VistaIzquierda"]
+texture = ExtResource("6_zarita")
+
+[node name="Capa" type="Sprite2D" parent="VistaIzquierda/Zarita"]
+
+[node name="Titulo" type="Label" parent="VistaIzquierda"]
+offset_left = -80.0
+offset_top = 260.0
+offset_right = 80.0
+offset_bottom = 290.0
+text = "izquierda"
+horizontal_alignment = 1
